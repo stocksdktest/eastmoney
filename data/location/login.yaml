@@ -1,0 +1,60 @@
+---
+-
+  element_info: com.eastmoney.android.berlin:id/close_btn
+  find_type: id
+  index: 0
+  operate_type: click
+  try: true
+-
+  element_info: com.eastmoney.android.berlin:id/btn_title_me
+  find_type: id
+  index: 0
+  operate_type: click
+-
+  element_info: 未登录
+  find_type: text
+  index: 0
+  operate_type: click
+-
+  element_info: com.eastmoney.android.berlin:id/tv_positive
+  find_type: id
+  index: 0
+  operate_type: click
+-
+  element_info: com.android.packageinstaller:id/permission_allow_button
+  find_type: id
+  index: 0
+  operate_type: click
+-
+  element_info: com.eastmoney.android.berlin:id/et_account
+  index: 0
+  find_type: id
+  operate_type: send_key
+  key: username
+-
+  element_info: com.eastmoney.android.berlin:id/et_password
+  index: 0
+  find_type: id
+  operate_type: send_key
+  key: password
+-
+  element_info: com.eastmoney.android.berlin:id/tv_account_login
+  index: 0
+  find_type: id
+  operate_type: click
+  key: password
+-
+  index: 8
+  operate_type: sleep
+-
+  element_info: 取消
+  index: 0
+  find_type: text
+  operate_type: click
+-
+  element_info: 知道了
+  index: 0
+  find_type: text
+  operate_type: get_text
+
+

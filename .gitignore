@@ -1,0 +1,12 @@
+.idea/
+__pycache__/
+.DS_store
+123.png
+debug_test.py
+execute_case_copy.py
+get_color.py
+nothing.py
+test1.py
+virtual_test.py
+xlsx_test.py
+
