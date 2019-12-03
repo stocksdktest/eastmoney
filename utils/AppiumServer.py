@@ -26,7 +26,9 @@ class AppiumServer(object):
 
     def start_server(self):
         for i in range(0,len(self.kwargs)):
-            cmd = "appium --session-override -p %s -U %s" % (self.kwargs[i]["port"],self.kwargs[i]["devices"])
+            # cmd = "appium --session-override -p %s  -U %s" % (self.kwargs[i]["port"], self.kwargs[i]["devices"])
+            cmd = "appium  --session-override -p %s -bp %s -U %s" % (self.kwargs[i]["port"], self.kwargs[i]["bp"], self.kwargs[i]["devices"])
+            # cmd = "appium  -p %s --session-override -U %s" % (self.kwargs[i]["port"],  self.kwargs[i]["devices"])
 
             if platform.system() == "Windows" :
                 t1 = RunServer(cmd)
@@ -48,7 +50,7 @@ class AppiumServer(object):
                     time.sleep(2)
                     print("-----------start_server-----------")
                     if "listener started" in appium_result or "Error:listen" in appium_result :
-                        print("-------server启动成功: %s---------"%self.kwargs[i]["port"])
+                        print("-------server启动成功: %s---------" % self.kwargs[i]["port"])
                         break
 
 

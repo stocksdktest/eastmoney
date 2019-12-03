@@ -15,6 +15,7 @@ def PATH(p):
 # ,
 #         'appPackage': 'com.eastmoney.android.berlin',
 #         'appActivity': 'com.eastmoney.android.module.launcher.internal.home.HomeActivity'
+# 'automationName': 'UIAutomator2',
 def get_desired_capabilities(app):
     desired_caps = {
         'platformName': 'Android',
@@ -22,12 +23,13 @@ def get_desired_capabilities(app):
         'platformVersion': '8.1',
         'app': PATH('apps/{}'.format(app)),
         'newCommandTimeout': 240,
-        'automationName': 'UIAutomator2',
         'uiautomator2ServerInstallTimeout': 120000,
         'adbExecTimeout': 120000,
         'appPackage': 'com.eastmoney.android.berlin',
         'appActivity': 'com.eastmoney.android.module.launcher.internal.home.HomeActivity',
-        'androidInstallTimeout': 240000
+        'automationName': 'UIAutomator2',
+        'androidInstallTimeout': 240000,
+        'autoGrantPermissions': True
     }
     #'com.eastmoney.android.module.launcher.internal.home.HomeActivity' com.eastmoney.android.activity.StockActivity
 

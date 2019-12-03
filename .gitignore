@@ -2,6 +2,8 @@
 __pycache__/
 .DS_store
 123.png
+456.png
+789.png
 debug_test.py
 execute_case_copy.py
 get_color.py

@@ -28,6 +28,36 @@ class AndroidDebugBridge(object):
                 devices.append(t[0])
         return devices
 
+
+def getPhoneInfo(devices):
+    '''获取设备的一些基本信息'''
+    cmd = "adb -s " + devices +" shell cat /system/build.prop "
+    phone_info = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
+    release = "ro.build.version.release=" # 版本
+    model = "ro.product.model=" #型号
+    brand = "ro.product.brand=" # 品牌
+    device = "ro.product.device=" # 设备名
+    result = {"release": release, "model": model, "brand": brand, "device": device}
+    for line in phone_info:
+         for i in line.split():
+            temp = i.decode()
+            if temp.find(release) >= 0:
+                result["release"] = temp[len(release):]
+                break
+            if temp.find(model) >= 0:
+                result["model"] = temp[len(model):]
+                break
+            if temp.find(brand) >= 0:
+                result["brand"] = temp[len(brand):]
+                break
+            if temp.find(device) >= 0:
+                result["device"] = temp[len(device) :]
+                break
+    #LOG.info(result)
+    return result
+
+
+
 '''--------------debug------------------
 if __name__ == '__main__':
     abdd = AndroidDebugBridge()

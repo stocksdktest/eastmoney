@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package stock_testing;
+
+option java_package = "com.chi.ssetest.protos";
+option java_outer_classname = "SetupConfig";
+
+message MarketPermission {
+	string Level = 1;
+	string CffLevel = 2;
+	string DceLevel = 3;
+	string CzceLevel = 4;
+	string FeLevel = 5;
+	string GILevel = 6;
+	string ShfeLevel = 7;
+	string IneLevel = 8;
+	repeated string HKPerms = 9;
+}
+
+message Site {
+	repeated string ips = 1;
+}
+
+message SDKConfig {
+	string appKeyAndroid = 1;
+	string appKeyIOS = 2;
+	map<string, Site> serverSites = 3;
+	MarketPermission marketPerm = 4;
+}
+
+message TestcaseConfig {
+	string testcaseID = 1;
+	bool continueWhenFailed = 2;
+	int64 roundIntervalSec = 3;
+	repeated string paramStrs = 4;
+}
+
+message RunnerConfig {
+	string jobID = 1;
+	string runnerID = 2;
+	SDKConfig sdkConfig = 3;
+	repeated TestcaseConfig casesConfig = 4;
+}

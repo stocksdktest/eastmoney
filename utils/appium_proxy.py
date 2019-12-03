@@ -107,3 +107,15 @@ class appium_driver_proxy():
         width = size['width']
         height = size['height']
         self.driver.swipe(width / 2, height / 2, width / 2, height / 4)
+
+    def get_screenshot_as_file(self, filename):
+        self.driver.get_screenshot_as_file(filename)
+
+    def swipe_down(self):
+        size = self.driver.get_window_size()
+        width = size['width']
+        height = size['height']
+        self.driver.swipe(width / 2, height / 4, width / 2, height / 2)
+
+    def keyevent(self, num):
+        self.driver.keyevent(num)

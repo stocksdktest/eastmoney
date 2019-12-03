@@ -28,12 +28,12 @@
   x: 648.0
   y: 263.0
 -
-  index: 4
+  index: 2
   operate_type: sleep
 -
   element_info: android.support.v7.widget.RecyclerView
   index: 0
   find_type: class
-  operate_type: extract_hk
+  operate_type: extract_QuoteDetailRequest_pankou
 
 
